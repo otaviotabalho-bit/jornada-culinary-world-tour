@@ -76,8 +76,9 @@ function Index() {
       <section className="relative overflow-hidden bg-forest text-forest-foreground">
         <img src={hero} alt="Tomates, azeite e manjericão" width={1600} height={704} className="absolute inset-0 h-full w-full object-cover object-right" />
         <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/70 to-transparent" />
+        <div className="hero-map-scrim pointer-events-none absolute inset-0" />
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden md:justify-end md:pr-8">
-          <WorldMap className="w-[92%] max-w-[820px] translate-y-3 text-accent/45 md:w-[58%]" />
+          <WorldMap className="w-[92%] max-w-[820px] translate-y-3 text-accent/75 drop-shadow-[0_0_10px_oklch(0.72_0.11_75/0.35)] md:w-[58%]" />
         </div>
         <div className={`${container} relative py-10`}>
           <p className="eyebrow text-accent">Coleção digital · 16 e-books em PDF</p>

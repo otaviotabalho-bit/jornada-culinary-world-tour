@@ -28,8 +28,9 @@ export const project = (lon: number, lat: number) => ({ x: lon + 180, y: 90 - la
 
 export function WorldMap({ className = "", showPlaces = true }: { className?: string; showPlaces?: boolean }) {
   const dots = [];
-  for (let i = 0; i < DOTS.length; i += 4) {
-    dots.push(<circle key={i} cx={DOTS[i]} cy={DOTS[i + 1]} r={DOTS[i + 2] * 1.25} opacity={DOTS[i + 3]} />);
+  for (let i = 0; i + 3 < DOTS.length; i += 4) {
+    const [cx, cy, r, o] = DOTS.slice(i, i + 4) as [number, number, number, number];
+    dots.push(<circle key={i} cx={cx} cy={cy} r={r * 1.25} opacity={o} />);
   }
   return (
     <svg viewBox="0 0 360 160" className={className} role="img" aria-label="Mapa-múndi com os países da coleção" fill="currentColor">
@@ -43,7 +44,7 @@ export function WorldMap({ className = "", showPlaces = true }: { className?: st
                 <circle cx={x} cy={y} r="3.4" opacity="0.22" />
                 <circle cx={x} cy={y} r="4.8" fill="none" stroke="currentColor" strokeWidth="0.6" className="map-ping" style={{ animationDelay: `${(i % 8) * 0.35}s` }} />
                 <circle cx={x} cy={y} r="1.9" />
-                <circle cx={x} cy={y} r="0.7" fill="var(--forest)" />
+                <circle cx={x} cy={y} r="0.8" fill="var(--forest-foreground)" />
               </g>
             );
           })}

@@ -40,7 +40,7 @@ const books: Book[] = [
   { title: "Peru à Mesa — Volume I", country: "Peru", chef: "Enrique Paredes", recipes: "36 receitas", flag: "pe", color: "bg-brown", img: f3 },
 ];
 
-const Flag = ({ code, className = "h-4 w-6" }: { code?: string; className?: string }) =>
+const Flag = ({ code, className = "h-4 w-6" }: { code?: string | undefined; className?: string }) =>
   code ? <img src={`https://flagcdn.com/w40/${code}.png`} alt="" className={`${className} rounded-sm object-cover`} loading="lazy" /> : <span className={`${className} rounded-sm bg-primary/70`} />;
 
 function Logo() {

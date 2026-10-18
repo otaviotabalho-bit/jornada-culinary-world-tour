@@ -167,6 +167,14 @@
   font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600;
 }
 
+/* Escurece a faixa do foto onde o mapa-múndi aparece, para os pontos ficarem legíveis. */
+.hero-map-scrim {
+  background: radial-gradient(62% 78% at 71% 50%,
+    color-mix(in oklab, var(--forest) 92%, transparent) 0%,
+    color-mix(in oklab, var(--forest) 68%, transparent) 52%,
+    transparent 100%);
+}
+
 /* Marcadores pulsantes do mapa-múndi do topo da página. */
 @keyframes map-ping {
   0% { transform: scale(0.5); opacity: 0.9; }

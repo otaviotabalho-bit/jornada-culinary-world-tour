@@ -5,6 +5,7 @@ import hero from "@/assets/hero.jpg";
 import f1 from "@/assets/food1.jpg";
 import f2 from "@/assets/food2.jpg";
 import f3 from "@/assets/food3.jpg";
+import { WorldMap } from "@/components/WorldMap";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -75,6 +76,9 @@ function Index() {
       <section className="relative overflow-hidden bg-forest text-forest-foreground">
         <img src={hero} alt="Tomates, azeite e manjericão" width={1600} height={704} className="absolute inset-0 h-full w-full object-cover object-right" />
         <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/70 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden md:justify-end md:pr-8">
+          <WorldMap className="w-[92%] max-w-[820px] translate-y-3 text-accent/45 md:w-[58%]" />
+        </div>
         <div className={`${container} relative py-10`}>
           <p className="eyebrow text-accent">Coleção digital · 16 e-books em PDF</p>
           <h1 className="mt-6 text-5xl leading-tight md:text-6xl">Jornada Culinária<br />pelo Mundo</h1>
@@ -110,14 +114,14 @@ function Index() {
         </div>
         <div className="mt-14 grid gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
           {books.map((b) => (
-            <article key={b.title}>
+            <article key={b.title} className="book-card">
               <div className={`${b.color} flex items-center gap-3 rounded-lg p-3 text-forest-foreground`}>
                 <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-forest-foreground/15 ring-2 ring-primary/60"><ChefHat className="h-5 w-5" /></span>
                 <div className="min-w-0 flex-1"><p className="truncate font-semibold">{b.chef}</p><p className="text-xs opacity-80">{b.country}</p></div>
                 <Flag code={b.flag} className="h-5 w-8" />
               </div>
               <div className="mt-3 grid aspect-[4/4.2] place-items-center bg-card">
-                <div className={`${b.color} w-[62%] -rotate-2 overflow-hidden rounded-sm shadow-2xl text-center text-forest-foreground`}>
+                <div className={`${b.color} book-cover w-[62%] overflow-hidden rounded-sm shadow-2xl text-center text-forest-foreground`}>
                   <p className="mt-4 text-[0.45rem] font-bold uppercase tracking-widest">Jornada culinária pelo mundo</p>
                   <p className="mt-3 px-2 font-serif text-xl leading-tight">{b.title}</p>
                   <p className="mt-4 text-[0.45rem] font-bold uppercase tracking-widest opacity-80">Com receitas de</p>

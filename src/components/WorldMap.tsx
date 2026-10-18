@@ -40,9 +40,10 @@ export function WorldMap({ className = "", showPlaces = true }: { className?: st
             const { x, y } = project(p.lon, p.lat);
             return (
               <g key={p.name}>
-                <circle cx={x} cy={y} r="4.6" fill="none" stroke="currentColor" strokeWidth="0.5" className="map-ping" style={{ animationDelay: `${(i % 8) * 0.35}s` }} />
-                <circle cx={x} cy={y} r="1.5" />
-                <circle cx={x} cy={y} r="0.6" fill="var(--forest)" />
+                <circle cx={x} cy={y} r="3.4" opacity="0.22" />
+                <circle cx={x} cy={y} r="4.8" fill="none" stroke="currentColor" strokeWidth="0.6" className="map-ping" style={{ animationDelay: `${(i % 8) * 0.35}s` }} />
+                <circle cx={x} cy={y} r="1.9" />
+                <circle cx={x} cy={y} r="0.7" fill="var(--forest)" />
               </g>
             );
           })}

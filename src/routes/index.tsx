@@ -36,9 +36,9 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-type Book = { title: string; country: string; chef: string; recipes: string; flag?: string; color: string; img: string; chefImg?: string };
+type Book = { title: string; country: string; chef: string; recipes: string; flag?: string; color: string; img: string; chefImg?: string; chefPos?: string };
 const books: Book[] = [
-  { title: "Itália à Mesa", country: "Itália", chef: "Cheff Otto", recipes: "48 receitas + 3 adaptações", flag: "it", color: "bg-olive", img: f1, chefImg: cheffOtto.url },
+  { title: "Itália à Mesa", country: "Itália", chef: "Cheff Otto", recipes: "48 receitas + 3 adaptações", flag: "it", color: "bg-olive", img: f1, chefImg: cheffOtto.url, chefPos: "object-top" },
   { title: "França à Mesa", country: "França", chef: "Érick Jacquin", recipes: "48 receitas", flag: "fr", color: "bg-wine", img: f3, chefImg: erickJacquin.url },
   { title: "Líbano à Mesa", country: "Líbano", chef: "Leila Youssef", recipes: "48 receitas", flag: "lb", color: "bg-olive", img: f2, chefImg: leilaYoussef.url },
   { title: "Japão à Mesa", country: "Japão", chef: "Tsuyoshi Murakami e Jun Sakamoto", recipes: "48 receitas", flag: "jp", color: "bg-ink", img: f2, chefImg: junSakamoto.url },
@@ -132,7 +132,7 @@ function Index() {
           {books.map((b) => (
             <article key={b.title} className="book-card">
               <div className={`${b.color} flex items-center gap-3 rounded-lg p-3 text-forest-foreground`}>
-                {b.chefImg ? <img src={b.chefImg} alt={b.chef} loading="lazy" className="h-12 w-12 shrink-0 rounded-full object-cover ring-2 ring-primary/60" /> : <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-forest-foreground/15 ring-2 ring-primary/60"><ChefHat className="h-5 w-5" /></span>}
+                {b.chefImg ? <img src={b.chefImg} alt={b.chef} loading="lazy" className={`h-12 w-12 shrink-0 rounded-full object-cover ${b.chefPos ?? "object-center"} ring-2 ring-primary/60`} /> : <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-forest-foreground/15 ring-2 ring-primary/60"><ChefHat className="h-5 w-5" /></span>}
                 <div className="min-w-0 flex-1"><p className="truncate font-semibold">{b.chef}</p><p className="text-xs opacity-80">{b.country}</p></div>
                 <Flag code={b.flag} className="h-5 w-8" />
               </div>

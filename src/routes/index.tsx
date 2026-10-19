@@ -6,6 +6,21 @@ import f1 from "@/assets/food1.jpg";
 import f2 from "@/assets/food2.jpg";
 import f3 from "@/assets/food3.jpg";
 import { WorldMap } from "@/components/WorldMap";
+import cheffOtto from "@/assets/chefs/cheff-otto.jpg.asset.json";
+import erickJacquin from "@/assets/chefs/erick-jacquin.jpg.asset.json";
+import leilaYoussef from "@/assets/chefs/leila-youssef.jpg.asset.json";
+import junSakamoto from "@/assets/chefs/jun-sakamoto.webp.asset.json";
+import alexAtala from "@/assets/chefs/alex-atala.jpg.asset.json";
+import luanaSabino from "@/assets/chefs/luana-sabino.jpg.asset.json";
+import alexandreSharin from "@/assets/chefs/alexandre-sharin.jpg.asset.json";
+import oscarBosch from "@/assets/chefs/oscar-bosch.jpg.asset.json";
+import riklerMakabu from "@/assets/chefs/rikler-makabu.jpg.asset.json";
+import kelmaZenaide from "@/assets/chefs/kelma-zenaide.jpg.asset.json";
+import francisMallmann from "@/assets/chefs/francis-mallmann.jpg.asset.json";
+import andersonLivio from "@/assets/chefs/anderson-livio.jpg.asset.json";
+import hestonBlumenthal from "@/assets/chefs/heston-blumenthal.jpg.asset.json";
+import jiangPu from "@/assets/chefs/jiang-pu.jpg.asset.json";
+import enriqueParedes from "@/assets/chefs/enrique-paredes.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -21,24 +36,24 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-type Book = { title: string; country: string; chef: string; recipes: string; flag?: string; color: string; img: string };
+type Book = { title: string; country: string; chef: string; recipes: string; flag?: string; color: string; img: string; chefImg?: string; chefPos?: string };
 const books: Book[] = [
-  { title: "Itália à Mesa", country: "Itália", chef: "Cheff Otto", recipes: "48 receitas + 3 adaptações", flag: "it", color: "bg-olive", img: f1 },
-  { title: "França à Mesa", country: "França", chef: "Érick Jacquin", recipes: "48 receitas", flag: "fr", color: "bg-wine", img: f3 },
-  { title: "Líbano à Mesa", country: "Líbano", chef: "Leila Youssef", recipes: "48 receitas", flag: "lb", color: "bg-olive", img: f2 },
-  { title: "Japão à Mesa", country: "Japão", chef: "Tsuyoshi Murakami e Jun Sakamoto", recipes: "48 receitas", flag: "jp", color: "bg-ink", img: f2 },
-  { title: "Brasil à Mesa", country: "Brasil", chef: "Alex Atala", recipes: "48 receitas", flag: "br", color: "bg-pine", img: f3 },
-  { title: "México à Mesa", country: "México", chef: "Luana Sabino e restaurante Metzi", recipes: "48 receitas", flag: "mx", color: "bg-wine", img: f3 },
-  { title: "Índia à Mesa", country: "Índia", chef: "Alexandre Sharin", recipes: "36 receitas", flag: "in", color: "bg-brown", img: f2 },
-  { title: "Espanha à Mesa", country: "Espanha", chef: "Óscar Bosch", recipes: "36 receitas", flag: "es", color: "bg-wine", img: f1 },
-  { title: "África à Mesa", country: "Culinárias africanas", chef: "Rikler Makabu Sekelembe", recipes: "36 receitas", color: "bg-brown", img: f2 },
-  { title: "Afro-Brasil à Mesa", country: "Tradição afro-brasileira", chef: "Kelma Zenaide", recipes: "36 receitas", color: "bg-pine", img: f2 },
-  { title: "Argentina à Mesa", country: "Argentina", chef: "Francis Mallmann", recipes: "36 receitas", flag: "ar", color: "bg-ink", img: f3 },
-  { title: "Estados Unidos à Mesa", country: "Estados Unidos", chef: "Anderson Lívio", recipes: "36 receitas", flag: "us", color: "bg-wine", img: f1 },
-  { title: "Britain à Mesa", country: "Reino Unido", chef: "Heston Blumenthal", recipes: "36 receitas", flag: "gb", color: "bg-olive", img: f1 },
+  { title: "Itália à Mesa", country: "Itália", chef: "Cheff Otto", recipes: "48 receitas + 3 adaptações", flag: "it", color: "bg-olive", img: f1, chefImg: cheffOtto.url, chefPos: "object-top" },
+  { title: "França à Mesa", country: "França", chef: "Érick Jacquin", recipes: "48 receitas", flag: "fr", color: "bg-wine", img: f3, chefImg: erickJacquin.url },
+  { title: "Líbano à Mesa", country: "Líbano", chef: "Leila Youssef", recipes: "48 receitas", flag: "lb", color: "bg-olive", img: f2, chefImg: leilaYoussef.url },
+  { title: "Japão à Mesa", country: "Japão", chef: "Tsuyoshi Murakami e Jun Sakamoto", recipes: "48 receitas", flag: "jp", color: "bg-ink", img: f2, chefImg: junSakamoto.url },
+  { title: "Brasil à Mesa", country: "Brasil", chef: "Alex Atala", recipes: "48 receitas", flag: "br", color: "bg-pine", img: f3, chefImg: alexAtala.url },
+  { title: "México à Mesa", country: "México", chef: "Luana Sabino e restaurante Metzi", recipes: "48 receitas", flag: "mx", color: "bg-wine", img: f3, chefImg: luanaSabino.url },
+  { title: "Índia à Mesa", country: "Índia", chef: "Alexandre Sharin", recipes: "36 receitas", flag: "in", color: "bg-brown", img: f2, chefImg: alexandreSharin.url },
+  { title: "Espanha à Mesa", country: "Espanha", chef: "Óscar Bosch", recipes: "36 receitas", flag: "es", color: "bg-wine", img: f1, chefImg: oscarBosch.url },
+  { title: "África à Mesa", country: "Culinárias africanas", chef: "Rikler Makabu Sekelembe", recipes: "36 receitas", color: "bg-brown", img: f2, chefImg: riklerMakabu.url },
+  { title: "Afro-Brasil à Mesa", country: "Tradição afro-brasileira", chef: "Kelma Zenaide", recipes: "36 receitas", color: "bg-pine", img: f2, chefImg: kelmaZenaide.url },
+  { title: "Argentina à Mesa", country: "Argentina", chef: "Francis Mallmann", recipes: "36 receitas", flag: "ar", color: "bg-ink", img: f3, chefImg: francisMallmann.url },
+  { title: "Estados Unidos à Mesa", country: "Estados Unidos", chef: "Anderson Lívio", recipes: "36 receitas", flag: "us", color: "bg-wine", img: f1, chefImg: andersonLivio.url },
+  { title: "Britain à Mesa", country: "Reino Unido", chef: "Heston Blumenthal", recipes: "36 receitas", flag: "gb", color: "bg-olive", img: f1, chefImg: hestonBlumenthal.url },
   { title: "Coreia à Mesa", country: "Coreia", chef: "João Son", recipes: "36 receitas", flag: "kr", color: "bg-wine", img: f2 },
-  { title: "China à Mesa", country: "China", chef: "Jiang Pu", recipes: "36 receitas", flag: "cn", color: "bg-pine", img: f3 },
-  { title: "Peru à Mesa — Volume I", country: "Peru", chef: "Enrique Paredes", recipes: "36 receitas", flag: "pe", color: "bg-brown", img: f3 },
+  { title: "China à Mesa", country: "China", chef: "Jiang Pu", recipes: "36 receitas", flag: "cn", color: "bg-pine", img: f3, chefImg: jiangPu.url },
+  { title: "Peru à Mesa — Volume I", country: "Peru", chef: "Enrique Paredes", recipes: "36 receitas", flag: "pe", color: "bg-brown", img: f3, chefImg: enriqueParedes.url },
 ];
 
 const Flag = ({ code, className = "h-4 w-6" }: { code?: string | undefined; className?: string }) =>
@@ -117,7 +132,7 @@ function Index() {
           {books.map((b) => (
             <article key={b.title} className="book-card">
               <div className={`${b.color} flex items-center gap-3 rounded-lg p-3 text-forest-foreground`}>
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-forest-foreground/15 ring-2 ring-primary/60"><ChefHat className="h-5 w-5" /></span>
+                {b.chefImg ? <img src={b.chefImg} alt={b.chef} loading="lazy" className={`h-12 w-12 shrink-0 rounded-full object-cover ${b.chefPos ?? "object-center"} ring-2 ring-primary/60`} /> : <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-forest-foreground/15 ring-2 ring-primary/60"><ChefHat className="h-5 w-5" /></span>}
                 <div className="min-w-0 flex-1"><p className="truncate font-semibold">{b.chef}</p><p className="text-xs opacity-80">{b.country}</p></div>
                 <Flag code={b.flag} className="h-5 w-8" />
               </div>

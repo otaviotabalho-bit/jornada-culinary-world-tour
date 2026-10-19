@@ -9,7 +9,7 @@ import { WorldMap } from "@/components/WorldMap";
 import cheffOtto from "@/assets/chefs/cheff-otto.jpg.asset.json";
 import erickJacquin from "@/assets/chefs/erick-jacquin.jpg.asset.json";
 import leilaYoussef from "@/assets/chefs/leila-youssef.jpg.asset.json";
-import junSakamoto from "@/assets/chefs/jun-sakamoto.webp.asset.json";
+import junSakamoto from "@/assets/chefs/jun-sakamoto.jpg.asset.json";
 import alexAtala from "@/assets/chefs/alex-atala.jpg.asset.json";
 import luanaSabino from "@/assets/chefs/luana-sabino.jpg.asset.json";
 import alexandreSharin from "@/assets/chefs/alexandre-sharin.jpg.asset.json";

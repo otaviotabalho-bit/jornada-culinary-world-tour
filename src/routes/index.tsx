@@ -154,7 +154,7 @@ function Index() {
           </div>
           <div className="border-t border-accent pt-8">
             <p className="eyebrow opacity-70">Coleção completa</p>
-            <div className="mt-6 flex flex-wrap items-center gap-4"><s className="text-lg opacity-60">de R$ 89,00</s><div className="rounded-xl border border-accent/70 bg-accent/10 px-5 py-3 shadow-[0_0_28px_hsl(var(--accent)/0.24)]"><p className="text-xs font-bold uppercase tracking-[0.22em] text-accent">Oferta especial</p><p className="mt-1 font-serif text-6xl font-bold leading-none text-accent drop-shadow-[0_0_14px_hsl(var(--accent)/0.55)] sm:text-7xl">R$ 19,99</p></div></div>
+            <div className="mt-6 flex flex-wrap items-baseline gap-x-5 gap-y-3"><s className="text-lg opacity-60">de R$ 89,00</s><p className="font-serif text-7xl font-bold leading-none tracking-tight text-accent drop-shadow-[0_0_10px_hsl(var(--accent)/0.75)] [text-shadow:0_0_22px_hsl(var(--accent)/0.45)] sm:text-8xl">R$ 19,99</p></div>
             <p className="mt-2 text-sm opacity-85">16 e-books em PDF, recebidos por e-mail.</p>
             <ul className="mt-6 space-y-4 text-sm">
               {["14 volumes sobre países", "Culinárias africanas e tradição afro-brasileira", "+650 receitas: 648 originais + 3 adaptações"].map((t) => <li key={t} className="flex gap-3"><Check className="h-4 w-4 text-accent" />{t}</li>)}

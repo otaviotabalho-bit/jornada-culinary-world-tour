@@ -6,6 +6,7 @@ import f1 from "@/assets/food1.jpg";
 import f2 from "@/assets/food2.jpg";
 import f3 from "@/assets/food3.jpg";
 import { WorldMap } from "@/components/WorldMap";
+import { Button } from "@/components/ui/button";
 import cheffOtto from "@/assets/chefs/cheff-otto.jpg.asset.json";
 import erickJacquin from "@/assets/chefs/erick-jacquin.jpg.asset.json";
 import leilaYoussef from "@/assets/chefs/leila-youssef.jpg.asset.json";
@@ -62,9 +63,9 @@ const Flag = ({ code, className = "h-4 w-6" }: { code?: string | undefined; clas
 
 function Logo() {
   return (
-    <div className="flex items-center gap-3">
-      <span className="grid h-12 w-12 place-items-center rounded-full border border-foreground/70"><Utensils className="h-5 w-5" /></span>
-      <span className="font-serif text-xl leading-tight">Jornada Culinária<br /><span className="text-muted-foreground">pelo Mundo</span></span>
+    <div className="flex min-w-0 items-center gap-2 sm:gap-3">
+      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-foreground/70 sm:h-12 sm:w-12"><Utensils className="h-4 w-4 sm:h-5 sm:w-5" /></span>
+      <span className="min-w-0 font-serif text-sm leading-tight sm:text-xl">Jornada Culinária<br /><span className="text-muted-foreground">pelo Mundo</span></span>
     </div>
   );
 }
@@ -78,15 +79,15 @@ const faqs = [
 
 function Index() {
   const [open, setOpen] = useState<number | null>(null);
-  const container = "mx-auto max-w-[1480px] px-6";
+  const container = "mx-auto max-w-[1480px] px-4 sm:px-6";
   return (
     <div className="bg-background text-foreground">
-      <header className={`${container} flex items-center justify-between py-6`}>
+      <header className={`${container} grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 py-3 sm:flex sm:justify-between sm:py-6`}>
         <Logo />
         <nav className="hidden gap-10 text-sm text-muted-foreground md:flex">
           <a href="#colecao">A coleção</a><a href="#faq">Perguntas frequentes</a>
         </nav>
-        <a href="#oferta" className="flex items-center gap-2 rounded-md border border-border px-5 py-3 text-sm font-medium">Ver oferta <ArrowRight className="h-4 w-4" /></a>
+        <Button asChild variant="outline" className="shrink-0 sm:h-auto sm:px-5 sm:py-3"><a href="#oferta">Ver oferta <ArrowRight className="h-4 w-4" /></a></Button>
       </header>
 
       <section className="relative overflow-hidden bg-forest text-forest-foreground">
@@ -96,48 +97,48 @@ function Index() {
         <div className="pointer-events-none absolute inset-0 flex items-end justify-center overflow-hidden pb-6 opacity-45 md:items-center md:justify-end md:pb-0 md:pr-8 md:opacity-100">
           <WorldMap className="w-[78%] max-w-[820px] translate-y-2 text-accent/80 drop-shadow-[0_0_10px_oklch(0.72_0.11_75/0.35)] md:w-[58%]" />
         </div>
-        <div className={`${container} relative py-10`}>
+        <div className={`${container} hero-content relative py-7 sm:py-10`}>
           <p className="eyebrow text-accent">Coleção digital · 16 e-books em PDF</p>
-          <h1 className="mt-6 text-5xl leading-tight md:text-6xl">Jornada Culinária<br />pelo Mundo</h1>
-          <p className="mt-4 font-serif text-2xl text-accent">Uma viagem que começa na sua cozinha.</p>
-          <p className="mt-5 max-w-xl leading-relaxed">16 e-books e +650 receitas de 14 países, além de culinárias africanas e tradição afro-brasileira. Explore novos sabores na sua cozinha.</p>
-          <div className="mt-5 flex gap-8 text-sm"><span className="flex items-center gap-2"><BookOpen className="h-4 w-4 text-accent" />16 e-books em PDF</span><span className="flex items-center gap-2"><Utensils className="h-4 w-4 text-accent" />+650 receitas</span></div>
+          <h1 className="mt-4 text-4xl leading-tight sm:mt-6 sm:text-5xl md:text-6xl">Jornada Culinária<br />pelo Mundo</h1>
+          <p className="mt-3 font-serif text-xl text-accent sm:mt-4 sm:text-2xl">Uma viagem que começa na sua cozinha.</p>
+          <p className="mt-4 max-w-xl text-sm leading-relaxed sm:mt-5 sm:text-base">16 e-books e +650 receitas de 14 países, além de culinárias africanas e tradição afro-brasileira. Explore novos sabores na sua cozinha.</p>
+          <div className="mt-4 grid grid-cols-[minmax(0,1fr)_auto] gap-3 text-xs sm:mt-5 sm:flex sm:gap-8 sm:text-sm"><span className="flex min-w-0 items-center gap-2"><BookOpen className="h-4 w-4 shrink-0 text-accent" />16 e-books em PDF</span><span className="flex items-center gap-2"><Utensils className="h-4 w-4 shrink-0 text-accent" />+650 receitas</span></div>
           <p className="mt-4 flex items-center gap-2 text-sm"><Mail className="h-4 w-4 text-accent" />Produto digital, recebido por e-mail.</p>
-          <div className="mt-6 flex items-baseline gap-4"><s className="text-sm">de R$ 89,00</s><span className="text-3xl font-semibold text-accent">por R$ 19,00</span><span className="text-sm">coleção completa</span></div>
-          <a href="#colecao" className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground">Conhecer os 16 e-books <ArrowRight className="h-4 w-4" /></a>
+          <div className="mt-5 grid grid-cols-[auto_minmax(0,1fr)] items-baseline gap-x-3 gap-y-1 sm:mt-6 sm:flex sm:gap-4"><s className="text-xs sm:text-sm">de R$ 89,00</s><span className="text-3xl font-semibold text-accent">por R$ 19,00</span><span className="col-span-2 text-xs sm:text-sm">coleção completa</span></div>
+          <Button asChild className="mt-4 h-auto w-full py-3 font-semibold sm:mt-6 sm:w-auto sm:px-8 sm:py-4"><a href="#colecao">Conhecer os 16 e-books <ArrowRight className="h-4 w-4" /></a></Button>
           <p className="mt-4 text-sm">Compra temporariamente indisponível.</p>
           <p className="mt-4 text-xs opacity-80">Receitas organizadas por nível de dificuldade.</p>
-          <div className="mt-6 flex justify-center gap-4 border-t border-dashed border-accent/40 pt-4">
+          <div className="mt-4 grid grid-cols-7 justify-items-center gap-2 border-t border-dashed border-accent/40 pt-3 sm:mt-6 sm:flex sm:justify-center sm:gap-4 sm:pt-4">
             {books.filter((b) => b.flag).map((b) => (
-              <span key={b.flag} className="grid h-9 w-9 place-items-center rounded-full bg-forest ring-1 ring-forest-foreground/20"><Flag code={b.flag} className="h-3.5 w-5" /></span>
+              <span key={b.flag} className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-forest ring-1 ring-forest-foreground/20 sm:h-9 sm:w-9"><Flag code={b.flag} className="h-3 w-4 sm:h-3.5 sm:w-5" /></span>
             ))}
           </div>
         </div>
       </section>
 
       <section className="bg-card">
-        <div className={`${container} grid grid-cols-2 py-8 md:grid-cols-4`}>
+        <div className={`${container} grid grid-cols-4 gap-2 py-4 sm:py-8`}>
           {[["16", "e-books na coleção"], ["+650", "receitas para explorar"], ["14", "países à sua mesa"], ["PDF", "recebido por e-mail"]].map(([n, l], i) => (
-            <div key={l} className={`text-center ${i ? "md:border-l border-border" : ""}`}><p className="font-serif text-4xl">{n}</p><p className="mt-2 text-sm text-muted-foreground">{l}</p></div>
+            <div key={l} className={`min-w-0 text-center ${i ? "border-l border-border" : ""}`}><p className="font-serif text-2xl sm:text-4xl">{n}</p><p className="mt-1 text-[0.65rem] leading-snug text-muted-foreground sm:mt-2 sm:text-sm">{l}</p></div>
           ))}
         </div>
       </section>
 
-      <section id="colecao" className={`${container} py-24`}>
+      <section id="colecao" className={`${container} collection-section py-9 sm:py-24`}>
         <div className="text-center">
           <p className="eyebrow text-muted-foreground">Sua próxima descoberta está aqui</p>
-          <h2 className="mt-6 text-5xl">Os 16 e-books da sua coleção</h2>
-          <p className="mx-auto mt-6 max-w-3xl leading-loose text-muted-foreground">14 volumes sobre países, um sobre culinárias africanas e um sobre a tradição afro-brasileira.<br />Todos em PDF, para consultar na sua cozinha.</p>
+          <h2 className="mt-3 text-3xl sm:mt-6 sm:text-5xl">Os 16 e-books da sua coleção</h2>
+          <p className="mx-auto mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:mt-6 sm:text-base sm:leading-loose">14 volumes sobre países, um sobre culinárias africanas e um sobre a tradição afro-brasileira.<br />Todos em PDF, para consultar na sua cozinha.</p>
         </div>
-        <div className="mt-14 grid gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="book-grid mt-6 grid grid-cols-2 gap-x-3 gap-y-6 sm:mt-14 sm:gap-x-10 sm:gap-y-14 lg:grid-cols-4">
           {books.map((b) => (
-            <article key={b.title} className="book-card">
-              <div className={`${b.color} flex items-center gap-3 rounded-lg p-3 text-forest-foreground`}>
+            <article key={b.title} className="book-card min-w-0">
+              <div className={`${b.color} chef-strip grid grid-cols-[auto_minmax(0,1fr)] items-center gap-2 rounded-lg p-2 text-forest-foreground sm:flex sm:gap-3 sm:p-3`}>
                 {b.chefImg ? <img src={b.chefImg} alt={b.chef} loading="lazy" className={`h-12 w-12 shrink-0 rounded-full object-cover ${b.chefPos ?? "object-center"} ring-2 ring-primary/60`} /> : <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-forest-foreground/15 ring-2 ring-primary/60"><ChefHat className="h-5 w-5" /></span>}
-                <div className="min-w-0 flex-1"><p className="truncate font-semibold">{b.chef}</p><p className="text-xs opacity-80">{b.country}</p></div>
-                <Flag code={b.flag} className="h-5 w-8" />
+                <div className="min-w-0 flex-1"><p className="break-words text-xs font-semibold leading-snug sm:truncate sm:text-base">{b.chef}</p><p className="hidden text-xs opacity-80 sm:block">{b.country}</p></div>
+                <Flag code={b.flag} className="hidden h-5 w-8 shrink-0 sm:block" />
               </div>
-              <div className="mt-3 grid aspect-[4/4.2] place-items-center bg-card">
+              <div className="cover-stage mt-2 grid aspect-[4/4.2] place-items-center bg-card sm:mt-3">
                 <div className={`${b.color} book-cover w-[62%] overflow-hidden rounded-sm shadow-2xl text-center text-forest-foreground`}>
                   <p className="mt-4 text-[0.45rem] font-bold uppercase tracking-widest">Jornada culinária pelo mundo</p>
                   <p className="mt-3 px-2 font-serif text-xl leading-tight">{b.title}</p>
@@ -147,17 +148,17 @@ function Index() {
                   <p className="py-2 text-[0.4rem] font-bold uppercase tracking-widest">Uma coleção de sabores e tradições</p>
                 </div>
               </div>
-              <h3 className="mt-5 flex items-center gap-2 font-sans text-lg font-semibold">{b.flag && <Flag code={b.flag} />}{b.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{b.country}</p>
-              <p className="eyebrow mt-2 text-muted-foreground">Com receitas de</p>
-              <p className="font-serif text-sm text-muted-foreground">{b.chef}</p>
-              <p className="mt-1 font-semibold">{b.recipes}</p>
+              <h3 className="mt-3 flex items-start gap-1.5 font-sans text-sm font-semibold leading-snug sm:mt-5 sm:items-center sm:gap-2 sm:text-lg">{b.flag && <Flag code={b.flag} className="mt-0.5 h-3 w-4 shrink-0 sm:mt-0 sm:h-4 sm:w-6" />}{b.title}</h3>
+              <p className="mt-1 text-xs text-muted-foreground sm:mt-2 sm:text-sm">{b.country}</p>
+              <p className="eyebrow mt-2 hidden text-muted-foreground sm:block">Com receitas de</p>
+              <p className="hidden font-serif text-sm text-muted-foreground sm:block">{b.chef}</p>
+              <p className="mt-1 text-xs font-semibold sm:text-base">{b.recipes}</p>
             </article>
           ))}
         </div>
-        <p className="mt-14 text-center text-sm leading-relaxed text-muted-foreground">+650 receitas = 648 receitas dos volumes originais incluídos + 3 adaptações adicionais em Itália à Mesa.<br />As imagens são composições culinárias ilustrativas, não uma lista de pratos incluídos nos e-books.</p>
-        <button disabled className="mt-16 w-full rounded-md bg-primary/80 py-5 text-lg font-medium text-primary-foreground/70">Compra temporariamente indisponível</button>
-        <p className="mt-6 text-center">As compras serão liberadas quando o pagamento estiver disponível.</p>
+        <p className="mt-6 text-center text-xs leading-relaxed text-muted-foreground sm:mt-14 sm:text-sm">+650 receitas = 648 receitas dos volumes originais incluídos + 3 adaptações adicionais em Itália à Mesa.<br />As imagens são composições culinárias ilustrativas, não uma lista de pratos incluídos nos e-books.</p>
+        <Button disabled className="mt-6 h-auto w-full whitespace-normal py-3 sm:mt-16 sm:py-5 sm:text-lg">Compra temporariamente indisponível</Button>
+        <p className="mt-3 text-center text-sm sm:mt-6 sm:text-base">As compras serão liberadas quando o pagamento estiver disponível.</p>
       </section>
 
       <section className="bg-card py-24">

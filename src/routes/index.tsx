@@ -158,18 +158,6 @@ function Index() {
       </section>
 
 
-      <section className={`${container} grid gap-12 py-24 md:grid-cols-2`}>
-        <div>
-          <p className="eyebrow text-muted-foreground">Para quem tem curiosidade e apetite</p>
-          <h2 className="mt-6 text-5xl leading-tight">Seu repertório merece<br />novos destinos.</h2>
-          <p className="mt-6 leading-loose text-muted-foreground">Não é preciso sair de casa para conhecer um novo universo de sabores. É preciso vontade de experimentar.</p>
-        </div>
-        <ul className="space-y-10">
-          {["Para quem tem curiosidade sobre as culinárias de diferentes lugares.", "Para quem gosta de cozinhar em casa e quer ampliar o repertório.", "Para quem prefere receitas com instruções organizadas por níveis.", "Para quem busca ideias para variar refeições e explorar ingredientes e técnicas."].map((t) => (
-            <li key={t} className="flex gap-5"><Check className="h-5 w-5 shrink-0" />{t}</li>
-          ))}
-        </ul>
-      </section>
 
       <section className="border-t border-border">
         <div className={`${container} py-24`}>

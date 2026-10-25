@@ -233,7 +233,7 @@
   .chef-strip > img,
   .chef-strip > span:first-child { height: 2.25rem; width: 2.25rem; }
   .chef-strip p:not(.eyebrow) { font-size: 0.75rem; }
-  .cover-stage { aspect-ratio: 4 / 5; min-height: 250px; padding-block: 12px; }
+  .cover-stage { aspect-ratio: auto; height: 250px; width: 100%; min-width: 0; padding-block: 12px; }
   .book-cover { width: 82%; }
   .book-cover > p:first-child { margin-top: 0.65rem; font-size: 0.3rem; }
   .book-cover > p.font-serif.text-xl {

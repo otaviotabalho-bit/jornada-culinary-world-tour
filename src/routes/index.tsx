@@ -159,7 +159,7 @@ function Index() {
             <ul className="mt-6 space-y-4 text-sm">
               {["14 volumes sobre países", "Culinárias africanas e tradição afro-brasileira", "+650 receitas: 648 originais + 3 adaptações"].map((t) => <li key={t} className="flex gap-3"><Check className="h-4 w-4 text-accent" />{t}</li>)}
             </ul>
-            <button disabled className="mt-8 w-full rounded-md bg-accent/70 py-5 text-lg font-medium text-forest">Compra temporariamente indisponível</button>
+            <button disabled className="purchase-glow mt-8 w-full rounded-md bg-accent/70 py-5 text-lg font-medium text-forest">Compra temporariamente indisponível</button>
             <p className="mt-6 text-sm">As compras serão liberadas quando o pagamento estiver disponível.</p>
           </div>
         </div>

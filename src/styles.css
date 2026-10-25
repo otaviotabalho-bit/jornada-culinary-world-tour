@@ -200,6 +200,32 @@
   box-shadow: 0 34px 60px -20px oklch(0.2 0.03 155 / 50%);
 }
 
+/* No celular: capas retas e sem animação acionada pelo toque. */
+@media (hover: none), (pointer: coarse) {
+  .book-card { perspective: none; }
+  .book-cover,
+  .book-card:hover .book-cover,
+  .book-card:focus-within .book-cover {
+    transform: none;
+    transition: none;
+    box-shadow: 0 12px 24px -12px oklch(0.2 0.03 155 / 35%);
+    will-change: auto;
+  }
+}
+
+/* Glow pulsante no botão desabilitado da oferta final. */
+@keyframes purchase-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 8px 1px oklch(0.78 0.1 80 / 35%), 0 0 18px 3px oklch(0.78 0.1 80 / 18%);
+  }
+  50% {
+    box-shadow: 0 0 15px 4px oklch(0.78 0.1 80 / 65%), 0 0 32px 8px oklch(0.78 0.1 80 / 32%);
+  }
+}
+.purchase-glow {
+  animation: purchase-glow-pulse 2.2s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .map-ping { animation: none; }
   .book-cover { transition: none; }

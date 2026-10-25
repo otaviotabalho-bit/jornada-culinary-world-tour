@@ -144,21 +144,6 @@ function Index() {
 
       </section>
 
-      <section className="bg-card py-24">
-        <div className={container}>
-          <p className="eyebrow text-center text-muted-foreground">O que você recebe</p>
-          <h2 className="mx-auto mt-6 max-w-2xl text-center text-5xl leading-tight">Uma coleção para consultar e explorar</h2>
-          <div className="mt-14 grid gap-12 md:grid-cols-3">
-            {[[FileText, "16 arquivos em PDF", "Uma coleção digital organizada em volumes por país ou tradição culinária."], [Layers, "Receitas por nível", "Organização por dificuldade para escolher o próximo desafio na cozinha."], [Leaf, "Orientações conforme o volume", "Técnicas, ingredientes e possíveis substituições no Brasil, quando presentes no e-book."]].map(([I, t, d]) => {
-              const Icon = I as typeof FileText;
-              return <div key={t as string} className="border-t border-border pt-7"><Icon className="h-7 w-7" /><h3 className="mt-6 font-sans text-lg font-semibold">{t as string}</h3><p className="mt-4 leading-loose text-muted-foreground">{d as string}</p></div>;
-            })}
-          </div>
-        </div>
-      </section>
-
-
-
       <section id="oferta" className="bg-forest py-24 text-forest-foreground">
         <div className={`${container} grid gap-12 md:grid-cols-2`}>
           <div>

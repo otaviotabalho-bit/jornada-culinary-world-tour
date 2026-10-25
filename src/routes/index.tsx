@@ -104,7 +104,6 @@ function Index() {
           <p className="mt-4 max-w-xl text-sm leading-relaxed sm:mt-5 sm:text-base">16 e-books e +650 receitas de 14 países, além de culinárias africanas e tradição afro-brasileira. Explore novos sabores na sua cozinha.</p>
           <div className="mt-4 grid grid-cols-[minmax(0,1fr)_auto] gap-3 text-xs sm:mt-5 sm:flex sm:gap-8 sm:text-sm"><span className="flex min-w-0 items-center gap-2"><BookOpen className="h-4 w-4 shrink-0 text-accent" />16 e-books em PDF</span><span className="flex items-center gap-2"><Utensils className="h-4 w-4 shrink-0 text-accent" />+650 receitas</span></div>
           <p className="mt-4 flex items-center gap-2 text-sm"><Mail className="h-4 w-4 text-accent" />Produto digital, recebido por e-mail.</p>
-          <div className="mt-5 grid grid-cols-[auto_minmax(0,1fr)] items-baseline gap-x-3 gap-y-1 sm:mt-6 sm:flex sm:gap-4"><s className="text-xs sm:text-sm">de R$ 89,00</s><span className="text-3xl font-semibold text-accent">por R$ 19,00</span><span className="col-span-2 text-xs sm:text-sm">coleção completa</span></div>
           <Button asChild className="mt-4 h-auto w-full py-3 font-semibold sm:mt-6 sm:w-auto sm:px-8 sm:py-4"><a href="#colecao">Conhecer os 16 e-books <ArrowRight className="h-4 w-4" /></a></Button>
           <p className="mt-4 text-sm">Compra temporariamente indisponível.</p>
           <p className="mt-4 text-xs opacity-80">Receitas organizadas por nível de dificuldade.</p>

@@ -1,11 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { ArrowRight, BookOpen, Utensils, Mail, Check, FileText, Layers, Leaf, Monitor, ChevronDown, ChefHat } from "lucide-react";
+import { ArrowRight, BookOpen, Utensils, Mail, Check, FileText, Layers, Leaf, Monitor, ChefHat } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import f1 from "@/assets/food1.jpg";
 import f2 from "@/assets/food2.jpg";
 import f3 from "@/assets/food3.jpg";
-import { WorldMap } from "@/components/WorldMap";
 import { Button } from "@/components/ui/button";
 import cheffOtto from "@/assets/chefs/cheff-otto.jpg.asset.json";
 import erickJacquin from "@/assets/chefs/erick-jacquin.jpg.asset.json";
@@ -70,22 +68,14 @@ function Logo() {
   );
 }
 
-const faqs = [
-  ["O que é a Jornada Culinária pelo Mundo?", "Uma coleção digital de 16 e-books em PDF com mais de 650 receitas."],
-  ["Quantas receitas estão incluídas?", "648 receitas dos volumes originais + 3 adaptações em Itália à Mesa."],
-  ["Os e-books são físicos?", "Não. É um produto digital em PDF."],
-  ["Como recebo o produto?", "Você recebe os e-books por e-mail, prontos para abrir no celular, tablet ou computador."],
-];
-
 function Index() {
-  const [open, setOpen] = useState<number | null>(null);
   const container = "mx-auto max-w-[1480px] px-4 sm:px-6";
   return (
     <div className="bg-background text-foreground">
       <header className={`${container} grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 py-3 sm:flex sm:justify-between sm:py-6`}>
         <Logo />
         <nav className="hidden gap-10 text-sm text-muted-foreground md:flex">
-          <a href="#colecao">A coleção</a><a href="#faq">Perguntas frequentes</a>
+          <a href="#colecao">A coleção</a>
         </nav>
         <Button asChild variant="outline" className="shrink-0 sm:h-auto sm:px-5 sm:py-3"><a href="#oferta">Ver oferta <ArrowRight className="h-4 w-4" /></a></Button>
       </header>
@@ -93,10 +83,6 @@ function Index() {
       <section className="relative overflow-hidden bg-forest text-forest-foreground">
         <img src={hero} alt="Tomates, azeite e manjericão" width={1600} height={704} className="absolute inset-0 h-full w-full object-cover object-right" />
         <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/70 to-transparent" />
-        <div className="hero-map-scrim pointer-events-none absolute inset-0 hidden md:block" />
-        <div className="pointer-events-none absolute inset-0 flex items-end justify-center overflow-hidden pb-6 opacity-45 md:items-center md:justify-end md:pb-0 md:pr-8 md:opacity-100">
-          <WorldMap className="w-[78%] max-w-[820px] translate-y-2 text-accent/80 drop-shadow-[0_0_10px_oklch(0.72_0.11_75/0.35)] md:w-[58%]" />
-        </div>
         <div className={`${container} hero-content relative py-7 sm:py-10`}>
           <p className="eyebrow text-accent">Coleção digital · 16 e-books em PDF</p>
           <h1 className="mt-4 text-4xl leading-tight sm:mt-6 sm:text-5xl md:text-6xl">Jornada Culinária<br />pelo Mundo</h1>
@@ -208,16 +194,6 @@ function Index() {
             <div className="flex gap-8"><span className="font-serif text-3xl text-muted-foreground">02</span><div><h3 className="font-sans text-lg font-semibold">Como você recebe os e-books</h3><p className="mt-3 leading-loose text-muted-foreground">Você recebe os e-books por e-mail, prontos para abrir no celular, no tablet ou no computador.</p><p className="mt-4 flex items-center gap-3"><Monitor className="h-5 w-5" />Celular · Tablet · Computador</p></div></div>
           </div>
         </div>
-      </section>
-
-      <section id="faq" className="mx-auto max-w-4xl px-6 pb-24">
-        <h2 className="mb-8 text-center text-4xl">Perguntas frequentes</h2>
-        {faqs.map(([q, a], i) => (
-          <div key={q} className="border-b border-border">
-            <button onClick={() => setOpen(open === i ? null : i)} className="flex w-full items-center justify-between py-5 text-left">{q}<ChevronDown className={`h-4 w-4 transition ${open === i ? "rotate-180" : ""}`} /></button>
-            {open === i && <p className="pb-5 text-muted-foreground">{a}</p>}
-          </div>
-        ))}
       </section>
 
       <section id="oferta" className="bg-forest py-24 text-forest-foreground">

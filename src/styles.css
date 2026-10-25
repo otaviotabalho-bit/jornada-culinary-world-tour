@@ -223,8 +223,7 @@
   section .mt-6 { margin-top: 1rem; }
   section .gap-12 { gap: 1.5rem; }
   section .leading-loose { line-height: 1.6; }
-  section p:not(.eyebrow):not(.font-serif):not(.font-semibold),
-  section li { font-size: 0.875rem; }
+  section :where(p:not(.eyebrow):not(.font-serif):not(.font-semibold), li) { font-size: 0.875rem; }
   section .eyebrow { font-size: 0.65rem; line-height: 1.6; }
 
   .hero-content > p.mt-4 { margin-top: 0.625rem; }

@@ -155,9 +155,7 @@ function Index() {
             </article>
           ))}
         </div>
-        <p className="mt-6 text-center text-xs leading-relaxed text-muted-foreground sm:mt-14 sm:text-sm">+650 receitas = 648 receitas dos volumes originais incluídos + 3 adaptações adicionais em Itália à Mesa.<br />As imagens são composições culinárias ilustrativas, não uma lista de pratos incluídos nos e-books.</p>
-        <Button disabled className="mt-6 h-auto w-full whitespace-normal py-3 sm:mt-16 sm:py-5 sm:text-lg">Compra temporariamente indisponível</Button>
-        <p className="mt-3 text-center text-sm sm:mt-6 sm:text-base">As compras serão liberadas quando o pagamento estiver disponível.</p>
+
       </section>
 
       <section className="bg-card py-24">

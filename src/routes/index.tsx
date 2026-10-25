@@ -157,20 +157,6 @@ function Index() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-card py-24">
-        <div className={container}>
-          <p className="eyebrow text-center text-muted-foreground">Repertório que inspira</p>
-          <h2 className="mt-6 text-center text-5xl">Referências e inspirações culinárias</h2>
-          <p className="mx-auto mt-6 max-w-2xl text-center leading-loose text-muted-foreground">Nomes e referências presentes em volumes específicos da coleção, sob uma perspectiva editorial.</p>
-          <div className="mt-14 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-4">
-            {books.map((b) => <div key={b.title} className="border-b border-border py-5"><p>{b.chef}</p><p className="mt-1 text-xs text-muted-foreground">{b.title}</p></div>)}
-          </div>
-          <div className="mt-12 space-y-4 border-l-2 border-accent pl-6 text-muted-foreground">
-            <p>As receitas atribuídas a Cheff Otto são adaptações editoriais de receitas publicadas por ele e ajustadas para esta coleção.</p>
-            <p>As menções a chefs e restaurantes indicam inspirações ou referências editoriais em volumes específicos. Não há afirmação de parceria, patrocínio ou endosso.</p>
-          </div>
-        </div>
-      </section>
 
       <section className={`${container} grid gap-12 py-24 md:grid-cols-2`}>
         <div>

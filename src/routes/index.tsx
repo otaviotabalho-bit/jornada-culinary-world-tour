@@ -21,6 +21,7 @@ import andersonLivio from "@/assets/chefs/anderson-livio.jpg.asset.json";
 import hestonBlumenthal from "@/assets/chefs/heston-blumenthal.jpg.asset.json";
 import jiangPu from "@/assets/chefs/jiang-pu.jpg.asset.json";
 import enriqueParedes from "@/assets/chefs/enrique-paredes.jpg.asset.json";
+import joaoSon from "@/assets/chefs/joao-son.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -51,7 +52,7 @@ const books: Book[] = [
   { title: "Argentina à Mesa", country: "Argentina", chef: "Francis Mallmann", recipes: "36 receitas", flag: "ar", color: "bg-ink", img: f3, chefImg: francisMallmann.url },
   { title: "Estados Unidos à Mesa", country: "Estados Unidos", chef: "Anderson Lívio", recipes: "36 receitas", flag: "us", color: "bg-wine", img: f1, chefImg: andersonLivio.url },
   { title: "Britain à Mesa", country: "Reino Unido", chef: "Heston Blumenthal", recipes: "36 receitas", flag: "gb", color: "bg-olive", img: f1, chefImg: hestonBlumenthal.url },
-  { title: "Coreia à Mesa", country: "Coreia", chef: "João Son", recipes: "36 receitas", flag: "kr", color: "bg-wine", img: f2 },
+  { title: "Coreia à Mesa", country: "Coreia", chef: "João Son", recipes: "36 receitas", flag: "kr", color: "bg-wine", img: f2, chefImg: joaoSon.url },
   { title: "China à Mesa", country: "China", chef: "Jiang Pu", recipes: "36 receitas", flag: "cn", color: "bg-pine", img: f3, chefImg: jiangPu.url },
   { title: "Peru à Mesa — Volume I", country: "Peru", chef: "Enrique Paredes", recipes: "36 receitas", flag: "pe", color: "bg-brown", img: f3, chefImg: enriqueParedes.url },
 ];

@@ -118,7 +118,7 @@ function Index() {
         <div className="book-grid mt-6 grid grid-cols-2 gap-x-3 gap-y-6 sm:mt-14 sm:gap-x-10 sm:gap-y-14 lg:grid-cols-4">
           {books.map((b) => (
             <article key={b.title} className="book-card min-w-0">
-              <div className={`${b.color} chef-strip grid grid-cols-[auto_minmax(0,1fr)] items-center gap-2 rounded-lg p-2 text-forest-foreground sm:flex sm:gap-3 sm:p-3`}>
+              <div className={`${b.color} chef-strip grid min-h-[76px] grid-cols-[auto_minmax(0,1fr)] items-center gap-2 rounded-lg p-3 text-forest-foreground sm:flex sm:min-h-[88px] sm:gap-3 sm:p-4`}>
                 {b.chefImg ? <img src={b.chefImg} alt={b.chef} loading="lazy" className={`h-12 w-12 shrink-0 rounded-full object-cover ${b.chefPos ?? "object-center"} ring-2 ring-primary/60`} /> : <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-forest-foreground/15 ring-2 ring-primary/60"><ChefHat className="h-5 w-5" /></span>}
                 <div className="min-w-0 flex-1"><p className="break-words text-xs font-semibold leading-snug sm:truncate sm:text-base">{b.chef}</p><p className="hidden text-xs opacity-80 sm:block">{b.country}</p></div>
                 <Flag code={b.flag} className="hidden h-5 w-8 shrink-0 sm:block" />

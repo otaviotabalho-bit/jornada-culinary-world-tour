@@ -159,17 +159,6 @@ function Index() {
 
 
 
-      <section className="border-t border-border">
-        <div className={`${container} py-24`}>
-          <p className="eyebrow text-muted-foreground">Da coleção para a sua cozinha</p>
-          <h2 className="mt-6 text-5xl">Como funciona</h2>
-          <div className="mt-14 grid gap-12 md:grid-cols-2">
-            <div className="flex gap-8"><span className="font-serif text-3xl text-muted-foreground">01</span><div><h3 className="font-sans text-lg font-semibold">Receba a coleção digital</h3><p className="mt-3 leading-loose text-muted-foreground">São 16 e-books em formato PDF — +650 receitas de culinárias diferentes, te ensinando tudo para experimentar os mais diversos sabores espalhados pelas culturas ao redor do mundo.</p></div></div>
-            <div className="flex gap-8"><span className="font-serif text-3xl text-muted-foreground">02</span><div><h3 className="font-sans text-lg font-semibold">Como você recebe os e-books</h3><p className="mt-3 leading-loose text-muted-foreground">Você recebe os e-books por e-mail, prontos para abrir no celular, no tablet ou no computador.</p><p className="mt-4 flex items-center gap-3"><Monitor className="h-5 w-5" />Celular · Tablet · Computador</p></div></div>
-          </div>
-        </div>
-      </section>
-
       <section id="oferta" className="bg-forest py-24 text-forest-foreground">
         <div className={`${container} grid gap-12 md:grid-cols-2`}>
           <div>

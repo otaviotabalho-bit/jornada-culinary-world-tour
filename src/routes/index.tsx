@@ -72,7 +72,8 @@ function Logo() {
 function Index() {
   const [bookSearch, setBookSearch] = useState("");
   const [searchFocused, setSearchFocused] = useState(false);
-  const matchingBooks = books.filter((book) => `${book.title} ${book.country} ${book.chef}`.normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").toLowerCase().includes(bookSearch.normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").toLowerCase())).slice(0, 6);
+  const normalizeSearch = (value: string) => value.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
+  const matchingBooks = books.filter((book) => normalizeSearch(`${book.title} ${book.country} ${book.chef}`).includes(normalizeSearch(bookSearch))).slice(0, 6);
   const container = "mx-auto max-w-[1480px] px-4 sm:px-6";
   return (
     <div className="bg-background text-foreground">

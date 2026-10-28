@@ -6,6 +6,7 @@ import f1 from "@/assets/food1.jpg";
 import f2 from "@/assets/food2.jpg";
 import f3 from "@/assets/food3.jpg";
 import { Button } from "@/components/ui/button";
+import { matchesBookSearch } from "@/lib/book-search";
 import cheffOtto from "@/assets/chefs/cheff-otto.jpg.asset.json";
 import erickJacquin from "@/assets/chefs/erick-jacquin.jpg.asset.json";
 import leilaYoussef from "@/assets/chefs/leila-youssef.jpg.asset.json";
@@ -72,8 +73,7 @@ function Logo() {
 function Index() {
   const [bookSearch, setBookSearch] = useState("");
   const [searchFocused, setSearchFocused] = useState(false);
-  const normalizeSearch = (value: string) => value.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
-  const matchingBooks = books.filter((book) => normalizeSearch(`${book.title} ${book.country} ${book.chef}`).includes(normalizeSearch(bookSearch))).slice(0, 6);
+  const matchingBooks = books.filter((book) => matchesBookSearch(book, bookSearch)).slice(0, 6);
   const container = "mx-auto max-w-[1480px] px-4 sm:px-6";
   return (
     <div className="bg-background text-foreground">

@@ -75,43 +75,43 @@ function Index() {
       <section className="landing-hero relative overflow-hidden">
         <div className="landing-leaf landing-leaf-left" aria-hidden="true">✦</div>
         <div className="landing-leaf landing-leaf-right" aria-hidden="true">✦</div>
-        <div className="landing-inner mx-auto flex max-w-5xl flex-col items-center px-5 pb-12 pt-10 text-center sm:px-8 sm:pt-14">
-          <div className="landing-food-photo relative mb-7">
+        <div className="landing-inner mx-auto flex max-w-4xl flex-col items-center px-5 pb-8 pt-7 text-center sm:px-8 sm:pt-9">
+          <div className="landing-food-photo relative mb-5">
             <img src={f1} alt="Prato preparado com cuidado em uma cozinha" className="h-full w-full rounded-full object-cover" />
             <span className="landing-check"><Check className="h-8 w-8" strokeWidth={3} /></span>
           </div>
-          <p className="landing-eyebrow flex items-center gap-5 text-xs font-semibold uppercase tracking-[0.22em] sm:gap-6 sm:text-xl">
+          <p className="landing-eyebrow flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.18em] sm:gap-5 sm:text-sm">
             <span className="h-px w-12 bg-accent sm:w-20" />
             Coleção digital · 16 e-books em PDF
             <span className="h-px w-12 bg-accent sm:w-20" />
           </p>
-          <h1 className="landing-title mt-6 font-serif font-bold leading-[0.94]">
+          <h1 className="landing-title mt-4 font-serif font-bold leading-[0.94]">
             <span className="block">Jornada Culinária</span>
             <span className="landing-script block">pelo Mundo</span>
           </h1>
-          <p className="mt-8 font-serif text-2xl font-semibold leading-snug sm:mt-10 sm:text-4xl">Uma viagem que começa na sua cozinha.</p>
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:mt-5 sm:text-3xl sm:leading-relaxed">
+          <p className="mt-5 font-serif text-xl font-semibold leading-snug sm:mt-6 sm:text-2xl">Uma viagem que começa na sua cozinha.</p>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:mt-4 sm:text-lg sm:leading-relaxed">
             16 e-books e +650 receitas de 14 países, além de culinárias africanas e tradição afro-brasileira. Explore novos sabores na sua cozinha.
           </p>
-          <div className="mt-7 grid w-full max-w-4xl grid-cols-1 gap-3 sm:mt-9 sm:grid-cols-3 sm:gap-5">
+          <div className="mt-5 grid w-full max-w-3xl grid-cols-3 gap-2 sm:mt-6 sm:gap-4">
             <div className="landing-benefit"><span className="landing-benefit-icon"><Zap className="h-6 w-6 sm:h-8 sm:w-8" /></span><span>Acesso<br />imediato</span></div>
             <div className="landing-benefit"><span className="landing-benefit-icon"><Smartphone className="h-6 w-6 sm:h-8 sm:w-8" /></span><span>Receba no<br />seu celular</span></div>
             <div className="landing-benefit"><span className="landing-benefit-icon"><BookOpen className="h-6 w-6 sm:h-8 sm:w-8" /></span><span>Milhares<br />de receitas</span></div>
           </div>
-          <a href="#colecao" className="landing-collection-link mt-8 flex w-full max-w-4xl items-center gap-4 rounded-full px-5 py-5 text-left sm:mt-12 sm:px-10 sm:py-7">
+          <a href="#colecao" className="landing-collection-link mt-5 flex w-full max-w-3xl items-center gap-3 rounded-full px-4 py-4 text-left sm:mt-7 sm:px-7 sm:py-5">
             <Search className="h-7 w-7 shrink-0 sm:h-10 sm:w-10" />
             <span className="h-10 w-px bg-border sm:h-12" />
             <span className="flex-1 text-base sm:text-3xl">Conheça os 16 e-books da coleção</span>
             <ArrowRight className="h-7 w-7 shrink-0 sm:h-10 sm:w-10" />
           </a>
-          <div className="mt-9 flex max-w-3xl flex-wrap justify-center gap-3 sm:mt-14 sm:gap-5">
+          <div className="mt-6 flex max-w-2xl flex-wrap justify-center gap-2 sm:mt-8 sm:gap-3">
             {books.filter((b) => b.flag).map((b) => (
-              <span key={b.flag} title={b.country} className="landing-flag"><Flag code={b.flag} className="h-full w-full rounded-full object-cover" /></span>
+              <span key={b.flag} title={b.country} className="landing-flag"><img src={`https://flagcdn.com/w80/${b.flag}.png`} alt={b.country} loading="lazy" /></span>
             ))}
-            <span title="Senegal" className="landing-flag">🇸🇳</span>
-            <span title="Argélia" className="landing-flag">🇩🇿</span>
+            <span title="Senegal" className="landing-flag"><img src="https://flagcdn.com/w80/sn.png" alt="Senegal" loading="lazy" /></span>
+            <span title="Argélia" className="landing-flag"><img src="https://flagcdn.com/w80/dz.png" alt="Argélia" loading="lazy" /></span>
           </div>
-          <div className="landing-ornament mt-10 w-full max-w-3xl sm:mt-16" />
+          <div className="landing-ornament mt-6 w-full max-w-2xl sm:mt-8" />
         </div>
       </section>
 

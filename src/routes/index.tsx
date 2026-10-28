@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { ArrowRight, BookOpen, Utensils, Check, ChefHat, Search, Smartphone, Zap } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import f1 from "@/assets/food1.jpg";
@@ -69,6 +70,10 @@ function Logo() {
 }
 
 function Index() {
+  const [bookSearch, setBookSearch] = useState("");
+  const [searchFocused, setSearchFocused] = useState(false);
+  const normalizeSearch = (value: string) => value.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
+  const matchingBooks = books.filter((book) => normalizeSearch(`${book.title} ${book.country} ${book.chef}`).includes(normalizeSearch(bookSearch))).slice(0, 6);
   const container = "mx-auto max-w-[1480px] px-4 sm:px-6";
   return (
     <div className="bg-background text-foreground">
@@ -98,12 +103,51 @@ function Index() {
             <div className="landing-benefit"><span className="landing-benefit-icon"><Smartphone className="h-6 w-6 sm:h-8 sm:w-8" /></span><span>Receba no<br />seu celular</span></div>
             <div className="landing-benefit"><span className="landing-benefit-icon"><BookOpen className="h-6 w-6 sm:h-8 sm:w-8" /></span><span>Milhares<br />de receitas</span></div>
           </div>
-          <a href="#colecao" className="landing-collection-link mt-4 flex w-full max-w-3xl items-center gap-3 rounded-full px-4 py-3 text-left sm:mt-5 sm:px-7 sm:py-4">
-            <Search className="h-7 w-7 shrink-0 sm:h-10 sm:w-10" />
-            <span className="h-10 w-px bg-border sm:h-12" />
-            <span className="flex-1 text-base sm:text-3xl">Conheça os 16 e-books da coleção</span>
-            <ArrowRight className="h-7 w-7 shrink-0 sm:h-10 sm:w-10" />
-          </a>
+          <div className="relative mt-4 w-full max-w-3xl sm:mt-5">
+            <div className="landing-collection-link flex w-full items-center gap-3 rounded-full px-4 py-3 text-left sm:px-7 sm:py-4">
+              <Search className="h-7 w-7 shrink-0 sm:h-8 sm:w-8" />
+              <span className="h-8 w-px shrink-0 bg-border sm:h-10" />
+              <input
+                type="search"
+                value={bookSearch}
+                onChange={(event) => setBookSearch(event.target.value)}
+                onFocus={() => setSearchFocused(true)}
+                onBlur={() => setSearchFocused(false)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" && matchingBooks.length > 0) {
+                    window.location.hash = `ebook-${books.indexOf(matchingBooks[0])}`;
+                    setSearchFocused(false);
+                  }
+                  if (event.key === "Escape") setSearchFocused(false);
+                }}
+                placeholder="Pesquise por chef ou país..."
+                aria-label="Pesquisar e-books por chef ou país"
+                aria-autocomplete="list"
+                className="min-w-0 flex-1 bg-transparent text-base outline-none placeholder:text-muted-foreground sm:text-xl"
+              />
+              {bookSearch ? <button type="button" aria-label="Limpar pesquisa" onMouseDown={(event) => event.preventDefault()} onClick={() => setBookSearch("")} className="shrink-0 text-muted-foreground hover:text-foreground">×</button> : <ArrowRight className="h-7 w-7 shrink-0 sm:h-8 sm:w-8" />}
+            </div>
+            {searchFocused && bookSearch.trim() && (
+              <div className="absolute left-0 right-0 top-full z-50 mt-2 overflow-hidden rounded-2xl border border-border bg-background text-left shadow-xl" role="listbox" aria-label="Resultados da pesquisa">
+                {matchingBooks.length > 0 ? matchingBooks.map((book) => (
+                  <a
+                    key={book.title}
+                    href={`#ebook-${books.indexOf(book)}`}
+                    onMouseDown={(event) => event.preventDefault()}
+                    onClick={() => { setBookSearch(""); setSearchFocused(false); }}
+                    className="flex items-center justify-between gap-3 border-b border-border/70 px-4 py-3 last:border-0 hover:bg-muted sm:px-5"
+                    role="option"
+                  >
+                    <span className="min-w-0">
+                      <span className="block truncate font-semibold">{book.title}</span>
+                      <span className="block truncate text-sm text-muted-foreground">{book.country} · {book.chef}</span>
+                    </span>
+                    <ArrowRight className="h-4 w-4 shrink-0" />
+                  </a>
+                )) : <p className="px-4 py-3 text-sm text-muted-foreground">Nenhum e-book encontrado. Tente outro país ou chef.</p>}
+              </div>
+            )}
+          </div>
           <div className="landing-flags mt-4 grid grid-cols-7 justify-items-center gap-x-2 gap-y-2 sm:mt-5 sm:gap-x-4 sm:gap-y-3">
             {books.filter((b) => b.flag).map((b) => (
               <span key={b.flag} title={b.country} className="landing-flag"><img src={`https://flagcdn.com/w80/${b.flag}.png`} alt={b.country} loading="lazy" /></span>
@@ -121,7 +165,7 @@ function Index() {
         </div>
         <div className="book-grid mt-6 grid grid-cols-2 gap-x-3 gap-y-6 sm:mt-14 sm:gap-x-10 sm:gap-y-14 lg:grid-cols-4">
           {books.map((b) => (
-            <article key={b.title} className="book-card min-w-0">
+            <article id={`ebook-${books.indexOf(b)}`} key={b.title} className="book-card min-w-0 scroll-mt-6">
               <div className={`${b.color} chef-strip grid min-h-[76px] grid-cols-[auto_minmax(0,1fr)] items-center gap-2 rounded-lg p-3 text-forest-foreground sm:flex sm:min-h-[88px] sm:gap-3 sm:p-4`}>
                 {b.chefImg ? <img src={b.chefImg} alt={b.chef} loading="lazy" className={`h-12 w-12 shrink-0 rounded-full object-cover ${b.chefPos ?? "object-center"} ring-2 ring-primary/60`} /> : <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-forest-foreground/15 ring-2 ring-primary/60"><ChefHat className="h-5 w-5" /></span>}
                 <div className="min-w-0 flex-1"><p className="break-words text-xs font-semibold leading-snug sm:truncate sm:text-base">{b.chef}</p><p className="hidden text-xs opacity-80 sm:block">{b.country}</p></div>

@@ -77,9 +77,11 @@ function Index() {
   const container = "mx-auto max-w-[1480px] px-4 sm:px-6";
   return (
     <div className="bg-background text-foreground">
-      <section className="landing-hero relative overflow-hidden">
-        <div className="landing-leaf landing-leaf-left" aria-hidden="true">✦</div>
-        <div className="landing-leaf landing-leaf-right" aria-hidden="true">✦</div>
+      <section className="landing-hero relative z-10">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          <div className="landing-leaf landing-leaf-left">✦</div>
+          <div className="landing-leaf landing-leaf-right">✦</div>
+        </div>
         <div className="landing-inner mx-auto flex max-w-4xl flex-col items-center px-5 pb-5 pt-5 text-center sm:px-8 sm:pt-6">
           <div className="landing-food-photo relative mb-4">
             <img src={f1} alt="Prato preparado com cuidado em uma cozinha" className="h-full w-full rounded-full object-cover" />
@@ -114,8 +116,9 @@ function Index() {
                 onFocus={() => setSearchFocused(true)}
                 onBlur={() => setSearchFocused(false)}
                 onKeyDown={(event) => {
-                  if (event.key === "Enter" && matchingBooks.length > 0) {
-                    window.location.hash = `ebook-${books.indexOf(matchingBooks[0])}`;
+                  const firstMatch = matchingBooks[0];
+                  if (event.key === "Enter" && firstMatch) {
+                    window.location.hash = `ebook-${books.indexOf(firstMatch)}`;
                     setSearchFocused(false);
                   }
                   if (event.key === "Escape") setSearchFocused(false);
@@ -128,7 +131,7 @@ function Index() {
               {bookSearch ? <button type="button" aria-label="Limpar pesquisa" onMouseDown={(event) => event.preventDefault()} onClick={() => setBookSearch("")} className="shrink-0 text-muted-foreground hover:text-foreground">×</button> : <ArrowRight className="h-7 w-7 shrink-0 sm:h-8 sm:w-8" />}
             </div>
             {searchFocused && bookSearch.trim() && (
-              <div className="absolute left-0 right-0 top-full z-50 mt-2 overflow-hidden rounded-2xl border border-border bg-background text-left shadow-xl" role="listbox" aria-label="Resultados da pesquisa">
+              <div className="absolute left-0 right-0 top-full z-50 mt-2 max-h-72 overflow-y-auto overscroll-contain rounded-lg border border-border bg-background text-left shadow-xl" role="listbox" aria-label="Resultados da pesquisa">
                 {matchingBooks.length > 0 ? matchingBooks.map((book) => (
                   <a
                     key={book.title}

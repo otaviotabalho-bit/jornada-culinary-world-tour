@@ -108,8 +108,6 @@ function Index() {
             {books.filter((b) => b.flag).map((b) => (
               <span key={b.flag} title={b.country} className="landing-flag"><img src={`https://flagcdn.com/w80/${b.flag}.png`} alt={b.country} loading="lazy" /></span>
             ))}
-            <span title="Senegal" className="landing-flag"><img src="https://flagcdn.com/w80/sn.png" alt="Senegal" loading="lazy" /></span>
-            <span title="Argélia" className="landing-flag"><img src="https://flagcdn.com/w80/dz.png" alt="Argélia" loading="lazy" /></span>
           </div>
           <div className="landing-ornament mt-6 w-full max-w-2xl sm:mt-8" />
         </div>

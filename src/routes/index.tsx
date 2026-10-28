@@ -75,8 +75,8 @@ function Index() {
       <section className="landing-hero relative overflow-hidden">
         <div className="landing-leaf landing-leaf-left" aria-hidden="true">✦</div>
         <div className="landing-leaf landing-leaf-right" aria-hidden="true">✦</div>
-        <div className="landing-inner mx-auto flex max-w-4xl flex-col items-center px-5 pb-8 pt-7 text-center sm:px-8 sm:pt-9">
-          <div className="landing-food-photo relative mb-5">
+        <div className="landing-inner mx-auto flex max-w-4xl flex-col items-center px-5 pb-5 pt-5 text-center sm:px-8 sm:pt-6">
+          <div className="landing-food-photo relative mb-4">
             <img src={f1} alt="Prato preparado com cuidado em uma cozinha" className="h-full w-full rounded-full object-cover" />
             <span className="landing-check"><Check className="h-8 w-8" strokeWidth={3} /></span>
           </div>
@@ -85,35 +85,35 @@ function Index() {
             Coleção digital · 16 e-books em PDF
             <span className="h-px w-12 bg-accent sm:w-20" />
           </p>
-          <h1 className="landing-title mt-4 font-serif font-bold leading-[0.94]">
+          <h1 className="landing-title mt-3 font-serif font-bold leading-[0.94]">
             <span className="block">Jornada Culinária</span>
             <span className="landing-script block">pelo Mundo</span>
           </h1>
-          <p className="mt-5 font-serif text-xl font-semibold leading-snug sm:mt-6 sm:text-2xl">Uma viagem que começa na sua cozinha.</p>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:mt-4 sm:text-lg sm:leading-relaxed">
+          <p className="mt-4 font-serif text-lg font-semibold leading-snug sm:mt-5 sm:text-2xl">Uma viagem que começa na sua cozinha.</p>
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:mt-3 sm:text-base sm:leading-relaxed">
             16 e-books e +650 receitas de 14 países, além de culinárias africanas e tradição afro-brasileira. Explore novos sabores na sua cozinha.
           </p>
-          <div className="mt-5 grid w-full max-w-3xl grid-cols-3 gap-2 sm:mt-6 sm:gap-4">
+          <div className="mt-4 grid w-full max-w-3xl grid-cols-3 gap-2 sm:mt-5 sm:gap-4">
             <div className="landing-benefit"><span className="landing-benefit-icon"><Zap className="h-6 w-6 sm:h-8 sm:w-8" /></span><span>Acesso<br />imediato</span></div>
             <div className="landing-benefit"><span className="landing-benefit-icon"><Smartphone className="h-6 w-6 sm:h-8 sm:w-8" /></span><span>Receba no<br />seu celular</span></div>
             <div className="landing-benefit"><span className="landing-benefit-icon"><BookOpen className="h-6 w-6 sm:h-8 sm:w-8" /></span><span>Milhares<br />de receitas</span></div>
           </div>
-          <a href="#colecao" className="landing-collection-link mt-5 flex w-full max-w-3xl items-center gap-3 rounded-full px-4 py-4 text-left sm:mt-7 sm:px-7 sm:py-5">
+          <a href="#colecao" className="landing-collection-link mt-4 flex w-full max-w-3xl items-center gap-3 rounded-full px-4 py-3 text-left sm:mt-5 sm:px-7 sm:py-4">
             <Search className="h-7 w-7 shrink-0 sm:h-10 sm:w-10" />
             <span className="h-10 w-px bg-border sm:h-12" />
             <span className="flex-1 text-base sm:text-3xl">Conheça os 16 e-books da coleção</span>
             <ArrowRight className="h-7 w-7 shrink-0 sm:h-10 sm:w-10" />
           </a>
-          <div className="landing-flags mt-6 grid grid-cols-7 justify-items-center gap-x-2 gap-y-3 sm:mt-8 sm:gap-x-4 sm:gap-y-4">
+          <div className="landing-flags mt-4 grid grid-cols-7 justify-items-center gap-x-2 gap-y-2 sm:mt-5 sm:gap-x-4 sm:gap-y-3">
             {books.filter((b) => b.flag).map((b) => (
               <span key={b.flag} title={b.country} className="landing-flag"><img src={`https://flagcdn.com/w80/${b.flag}.png`} alt={b.country} loading="lazy" /></span>
             ))}
           </div>
-          <div className="landing-ornament mt-6 w-full max-w-2xl sm:mt-8" />
+          <div className="landing-ornament mt-4 w-full max-w-2xl sm:mt-5" />
         </div>
       </section>
 
-      <section id="colecao" className={`${container} collection-section py-9 sm:py-24`}>
+      <section id="colecao" className={`${container} collection-section py-7 sm:py-16`}>
         <div className="text-center">
           <p className="eyebrow text-muted-foreground">Sua próxima descoberta está aqui</p>
           <h2 className="mt-3 text-3xl sm:mt-6 sm:text-5xl">Os 16 e-books da sua coleção</h2>

@@ -104,7 +104,7 @@ function Index() {
             <span className="flex-1 text-base sm:text-3xl">Conheça os 16 e-books da coleção</span>
             <ArrowRight className="h-7 w-7 shrink-0 sm:h-10 sm:w-10" />
           </a>
-          <div className="mt-6 flex max-w-2xl flex-wrap justify-center gap-2 sm:mt-8 sm:gap-3">
+          <div className="landing-flags mt-6 grid grid-cols-7 justify-items-center gap-x-2 gap-y-3 sm:mt-8 sm:gap-x-4 sm:gap-y-4">
             {books.filter((b) => b.flag).map((b) => (
               <span key={b.flag} title={b.country} className="landing-flag"><img src={`https://flagcdn.com/w80/${b.flag}.png`} alt={b.country} loading="lazy" /></span>
             ))}

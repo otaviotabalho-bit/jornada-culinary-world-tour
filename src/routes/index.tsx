@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, BookOpen, Utensils, Mail, Check, FileText, Layers, Leaf, Monitor, ChefHat } from "lucide-react";
+import { ArrowRight, BookOpen, Utensils, Check, ChefHat, Search, Smartphone, Zap } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import f1 from "@/assets/food1.jpg";
 import f2 from "@/assets/food2.jpg";
@@ -72,40 +72,46 @@ function Index() {
   const container = "mx-auto max-w-[1480px] px-4 sm:px-6";
   return (
     <div className="bg-background text-foreground">
-      <header className={`${container} grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 py-3 sm:flex sm:justify-between sm:py-6`}>
-        <Logo />
-        <nav className="hidden gap-10 text-sm text-muted-foreground md:flex">
-          <a href="#colecao">A coleção</a>
-        </nav>
-        <Button asChild variant="outline" className="shrink-0 sm:h-auto sm:px-5 sm:py-3"><a href="#oferta">Ver oferta <ArrowRight className="h-4 w-4" /></a></Button>
-      </header>
-
-      <section className="relative overflow-hidden bg-forest text-forest-foreground">
-        <img src={hero} alt="Tomates, azeite e manjericão" width={1600} height={704} className="absolute inset-0 h-full w-full object-cover object-right" />
-        <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/70 to-transparent" />
-        <div className={`${container} hero-content relative py-7 sm:py-10`}>
-          <p className="eyebrow text-accent">Coleção digital · 16 e-books em PDF</p>
-          <h1 className="mt-4 text-4xl leading-tight sm:mt-6 sm:text-5xl md:text-6xl">Jornada Culinária<br />pelo Mundo</h1>
-          <p className="mt-3 font-serif text-xl text-accent sm:mt-4 sm:text-2xl">Uma viagem que começa na sua cozinha.</p>
-          <p className="mt-4 max-w-xl text-sm leading-relaxed sm:mt-5 sm:text-base">16 e-books e +650 receitas de 14 países, além de culinárias africanas e tradição afro-brasileira. Explore novos sabores na sua cozinha.</p>
-          <div className="mt-4 grid grid-cols-[minmax(0,1fr)_auto] gap-3 text-xs sm:mt-5 sm:flex sm:gap-8 sm:text-sm"><span className="flex min-w-0 items-center gap-2"><BookOpen className="h-4 w-4 shrink-0 text-accent" />16 e-books em PDF</span><span className="flex items-center gap-2"><Utensils className="h-4 w-4 shrink-0 text-accent" />+650 receitas</span></div>
-          <p className="mt-4 flex items-center gap-2 text-sm"><Mail className="h-4 w-4 text-accent" />Produto digital, recebido por e-mail.</p>
-          <Button asChild className="mt-5 h-auto w-full py-3 font-semibold sm:mt-7 sm:w-auto sm:px-8 sm:py-4"><a href="#colecao">Conhecer os 16 e-books <ArrowRight className="h-4 w-4" /></a></Button>
-          <p className="mt-4 text-sm">Compra temporariamente indisponível.</p>
-          <p className="mt-4 text-xs opacity-80">Receitas organizadas por nível de dificuldade.</p>
-          <div className="mt-4 grid grid-cols-7 justify-items-center gap-2 border-t border-dashed border-accent/40 pt-3 sm:mt-6 sm:flex sm:justify-center sm:gap-4 sm:pt-4">
-            {books.filter((b) => b.flag).map((b) => (
-              <span key={b.flag} className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-forest ring-1 ring-forest-foreground/20 sm:h-9 sm:w-9"><Flag code={b.flag} className="h-3 w-4 sm:h-3.5 sm:w-5" /></span>
-            ))}
+      <section className="landing-hero relative overflow-hidden">
+        <div className="landing-leaf landing-leaf-left" aria-hidden="true">✦</div>
+        <div className="landing-leaf landing-leaf-right" aria-hidden="true">✦</div>
+        <div className="landing-inner mx-auto flex max-w-5xl flex-col items-center px-5 pb-12 pt-10 text-center sm:px-8 sm:pt-14">
+          <div className="landing-food-photo relative mb-7">
+            <img src={f1} alt="Prato preparado com cuidado em uma cozinha" className="h-full w-full rounded-full object-cover" />
+            <span className="landing-check"><Check className="h-8 w-8" strokeWidth={3} /></span>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-card">
-        <div className={`${container} grid grid-cols-4 gap-2 py-4 sm:py-8`}>
-          {[["16", "e-books na coleção"], ["+650", "receitas para explorar"], ["14", "países à sua mesa"], ["PDF", "recebido por e-mail"]].map(([n, l], i) => (
-            <div key={l} className={`min-w-0 text-center ${i ? "border-l border-border" : ""}`}><p className="font-serif text-2xl sm:text-4xl">{n}</p><p className="mt-1 text-[0.65rem] leading-snug text-muted-foreground sm:mt-2 sm:text-sm">{l}</p></div>
-          ))}
+          <p className="landing-eyebrow flex items-center gap-5 text-xs font-semibold uppercase tracking-[0.22em] sm:gap-6 sm:text-xl">
+            <span className="h-px w-12 bg-accent sm:w-20" />
+            Coleção digital · 16 e-books em PDF
+            <span className="h-px w-12 bg-accent sm:w-20" />
+          </p>
+          <h1 className="landing-title mt-6 font-serif font-bold leading-[0.94]">
+            <span className="block">Jornada Culinária</span>
+            <span className="landing-script block">pelo Mundo</span>
+          </h1>
+          <p className="mt-8 font-serif text-2xl font-semibold leading-snug sm:mt-10 sm:text-4xl">Uma viagem que começa na sua cozinha.</p>
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:mt-5 sm:text-3xl sm:leading-relaxed">
+            16 e-books e +650 receitas de 14 países, além de culinárias africanas e tradição afro-brasileira. Explore novos sabores na sua cozinha.
+          </p>
+          <div className="mt-7 grid w-full max-w-4xl grid-cols-1 gap-3 sm:mt-9 sm:grid-cols-3 sm:gap-5">
+            <div className="landing-benefit"><span className="landing-benefit-icon"><Zap className="h-6 w-6 sm:h-8 sm:w-8" /></span><span>Acesso<br />imediato</span></div>
+            <div className="landing-benefit"><span className="landing-benefit-icon"><Smartphone className="h-6 w-6 sm:h-8 sm:w-8" /></span><span>Receba no<br />seu celular</span></div>
+            <div className="landing-benefit"><span className="landing-benefit-icon"><BookOpen className="h-6 w-6 sm:h-8 sm:w-8" /></span><span>Milhares<br />de receitas</span></div>
+          </div>
+          <a href="#colecao" className="landing-collection-link mt-8 flex w-full max-w-4xl items-center gap-4 rounded-full px-5 py-5 text-left sm:mt-12 sm:px-10 sm:py-7">
+            <Search className="h-7 w-7 shrink-0 sm:h-10 sm:w-10" />
+            <span className="h-10 w-px bg-border sm:h-12" />
+            <span className="flex-1 text-base sm:text-3xl">Conheça os 16 e-books da coleção</span>
+            <ArrowRight className="h-7 w-7 shrink-0 sm:h-10 sm:w-10" />
+          </a>
+          <div className="mt-9 flex max-w-3xl flex-wrap justify-center gap-3 sm:mt-14 sm:gap-5">
+            {books.filter((b) => b.flag).map((b) => (
+              <span key={b.flag} title={b.country} className="landing-flag"><Flag code={b.flag} className="h-full w-full rounded-full object-cover" /></span>
+            ))}
+            <span title="Senegal" className="landing-flag">🇸🇳</span>
+            <span title="Argélia" className="landing-flag">🇩🇿</span>
+          </div>
+          <div className="landing-ornament mt-10 w-full max-w-3xl sm:mt-16" />
         </div>
       </section>
 

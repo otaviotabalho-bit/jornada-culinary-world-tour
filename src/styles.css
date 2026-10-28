@@ -228,8 +228,6 @@
   height: 2.3rem;
   flex-shrink: 0;
   place-items: center;
-  border: 1.5px solid currentColor;
-  border-radius: 9999px;
 }
 .landing-collection-link {
   color: oklch(0.39 0.025 160);

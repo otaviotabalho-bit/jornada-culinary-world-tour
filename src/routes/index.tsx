@@ -210,8 +210,7 @@ function Index() {
             <ul className="offer-benefits mt-6 space-y-3 text-sm sm:text-base">
               {[
                 "14 volumes inspirados nas cozinhas de diferentes países",
-                "Um e-book dedicado às culinárias africanas",
-                "Um e-book sobre a tradição afro-brasileira",
+                "Acesso vitalício à coleção completa",
                 "Arquivos digitais em PDF para consultar quando quiser",
                 "Coleção recebida por e-mail após a liberação da compra",
               ].map((item) => <li key={item} className="flex items-start gap-3"><span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-emerald-600 text-white"><Check className="h-4 w-4" strokeWidth={3} /></span><span>{item}</span></li>)}

@@ -209,7 +209,7 @@ function Index() {
             </div>
             <ul className="offer-benefits mt-6 space-y-3 text-sm sm:text-base">
               {[
-                "14 volumes inspirados nas cozinhas de diferentes países",
+                "16 e-books com receitas de todas as regiões dos 14 países da coleção",
                 "Acesso vitalício à coleção completa",
                 "Arquivos digitais em PDF para consultar quando quiser",
                 "Coleção recebida por e-mail após a liberação da compra",

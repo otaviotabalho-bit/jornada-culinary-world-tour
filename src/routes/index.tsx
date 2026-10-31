@@ -23,6 +23,7 @@ import hestonBlumenthal from "@/assets/chefs/heston-blumenthal.jpg.asset.json";
 import jiangPu from "@/assets/chefs/jiang-pu.jpg.asset.json";
 import enriqueParedes from "@/assets/chefs/enrique-paredes.jpg.asset.json";
 import joaoSon from "@/assets/chefs/joao-son.jpg.asset.json";
+import colecaoBanner from "@/assets/colecao-banner.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -196,6 +197,9 @@ function Index() {
       </section>
 
       <section id="oferta" className="offer-section bg-forest px-4 py-14 text-forest-foreground sm:px-6 sm:py-20">
+        <div className="mx-auto max-w-3xl">
+          <img src={colecaoBanner.url} alt="Coleção Jornada Culinária pelo Mundo: 16 e-books de receitas internacionais" className="mb-8 w-full rounded-2xl shadow-2xl sm:mb-10" loading="lazy" />
+        </div>
         <div className="mx-auto max-w-2xl">
           <div className="offer-card relative overflow-hidden rounded-[1.75rem] border border-accent/70 bg-background px-5 pb-7 pt-7 text-foreground shadow-2xl sm:px-10 sm:pb-9 sm:pt-9">
             <div className="offer-topline absolute inset-x-0 top-0 h-2 bg-accent" />

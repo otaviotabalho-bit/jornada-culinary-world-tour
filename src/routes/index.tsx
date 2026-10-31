@@ -195,23 +195,39 @@ function Index() {
 
       </section>
 
-      <section id="oferta" className="bg-forest py-24 text-forest-foreground">
-        <div className={`${container} grid gap-12 md:grid-cols-2`}>
-          <div>
-            <p className="eyebrow text-accent">Encontre seu próximo desafio dentro da cozinha!</p>
-            <h2 className="mt-8 text-6xl leading-tight">Jornada Culinária<br />pelo Mundo</h2>
-            <div className="mt-8 flex gap-8"><span className="flex items-center gap-2"><BookOpen className="h-5 w-5" />16 e-books</span><span className="flex items-center gap-2"><ChefHat className="h-5 w-5" />+650 receitas</span></div>
-            <p className="mt-8 leading-loose opacity-85">Itália, França, Líbano, Japão, Brasil, México, Índia, Espanha, Argentina, Estados Unidos, Reino Unido, Coreia, China e Peru. Mais as culinárias africanas e a tradição afro-brasileira.</p>
-          </div>
-          <div className="border-t border-accent pt-8">
-            <p className="eyebrow opacity-70">Coleção completa</p>
-            <div className="mt-6 flex flex-wrap items-baseline gap-x-5 gap-y-3"><s className="text-lg opacity-60">de R$ 89,00</s><p className="font-serif text-7xl font-bold leading-none tracking-tight text-accent drop-shadow-[0_0_10px_hsl(var(--accent)/0.75)] [text-shadow:0_0_22px_hsl(var(--accent)/0.45)] sm:text-8xl">R$ 18,99</p></div>
-            <p className="mt-2 text-sm opacity-85">16 e-books em PDF, recebidos por e-mail.</p>
-            <ul className="mt-6 space-y-4 text-sm">
-              {["14 volumes sobre países", "Culinárias africanas e tradição afro-brasileira", "+650 receitas: 648 originais + 3 adaptações"].map((t) => <li key={t} className="flex gap-3"><Check className="h-4 w-4 text-accent" />{t}</li>)}
+      <section id="oferta" className="offer-section bg-forest px-4 py-14 text-forest-foreground sm:px-6 sm:py-20">
+        <div className="mx-auto max-w-2xl">
+          <div className="offer-card relative overflow-hidden rounded-[1.75rem] border border-accent/70 bg-background px-5 pb-7 pt-7 text-foreground shadow-2xl sm:px-10 sm:pb-9 sm:pt-9">
+            <div className="offer-topline absolute inset-x-0 top-0 h-2 bg-accent" />
+            <div className="flex justify-center">
+              <span className="rounded-full bg-forest px-5 py-2 text-xs font-bold uppercase tracking-wide text-forest-foreground sm:text-sm">✦ Coleção completa</span>
+            </div>
+            <div className="mt-5 text-center">
+              <span className="inline-flex rounded-full bg-accent/20 px-5 py-2 text-sm font-bold text-foreground">✦ Jornada Culinária pelo Mundo</span>
+              <h2 className="mt-4 font-serif text-3xl font-bold leading-tight text-forest sm:text-4xl">16 e-books digitais em PDF</h2>
+              <p className="mt-2 text-base font-semibold text-forest sm:text-lg">Mais de 650 receitas para explorar novos sabores</p>
+            </div>
+            <ul className="offer-benefits mt-6 space-y-3 text-sm sm:text-base">
+              {[
+                "14 volumes inspirados nas cozinhas de diferentes países",
+                "Um e-book dedicado às culinárias africanas",
+                "Um e-book sobre a tradição afro-brasileira",
+                "Arquivos digitais em PDF para consultar quando quiser",
+                "Coleção recebida por e-mail após a liberação da compra",
+              ].map((item) => <li key={item} className="flex items-start gap-3"><span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-emerald-600 text-white"><Check className="h-4 w-4" strokeWidth={3} /></span><span>{item}</span></li>)}
             </ul>
-            <button disabled className="purchase-glow mt-8 w-full rounded-md bg-accent/70 py-5 text-lg font-medium text-forest">Compra temporariamente indisponível</button>
-            <p className="mt-6 text-sm">As compras serão liberadas quando o pagamento estiver disponível.</p>
+            <div className="my-6 border-t border-border" />
+            <div className="text-center">
+              <p className="text-sm font-semibold uppercase tracking-wider text-accent-foreground">Oferta da coleção completa</p>
+              <div className="mt-3 flex flex-wrap items-baseline justify-center gap-x-3 gap-y-1">
+                <s className="text-base text-muted-foreground">De R$ 89,00</s>
+                <span className="text-sm text-muted-foreground">por apenas</span>
+              </div>
+              <p className="offer-price mt-1 font-serif text-6xl font-bold leading-none text-emerald-600 sm:text-7xl">R$ 18,99</p>
+              <p className="mt-3 text-sm text-muted-foreground">Pagamento e liberação da compra ainda indisponíveis.</p>
+            </div>
+            <button disabled className="purchase-glow mt-6 w-full cursor-not-allowed rounded-xl bg-emerald-600/75 px-4 py-4 text-base font-bold text-white opacity-90 sm:py-5 sm:text-lg">Compra temporariamente indisponível</button>
+            <p className="mt-4 text-center text-xs leading-relaxed text-muted-foreground">Quando a compra estiver disponível, a coleção será enviada em formato digital para o e-mail informado.</p>
           </div>
         </div>
       </section>

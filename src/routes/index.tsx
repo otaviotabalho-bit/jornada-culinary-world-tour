@@ -246,15 +246,15 @@ function Index() {
           </div>
           <div className="space-y-4">
             {[
-              { name: "Mariana Costa", seed: "MarianaCosta", time: "Culinária italiana", message: "Sempre gostei de massas, mas queria conhecer melhor os pratos de diferentes regiões da Itália. O volume italiano reúne ideias que vão além das receitas mais conhecidas e me inspira a variar o cardápio." },
-              { name: "Rafael Mendes", seed: "RafaelMendes", time: "Cozinha francesa", message: "A parte da culinária francesa é ótima para quem quer explorar novos sabores e técnicas. Gostei da variedade de preparos e de poder consultar as receitas no PDF." },
-              { name: "Camila Oliveira", seed: "CamilaOliveira", time: "Sabores do Japão", message: "Tenho curiosidade pela cozinha japonesa e achei interessante ter várias receitas reunidas em um só lugar. É um material para explorar aos poucos e escolher o que preparar." },
-              { name: "Bruno Almeida", seed: "BrunoAlmeida", time: "Culinárias brasileiras", message: "Gostei da proposta de conhecer diferentes tradições culinárias. O conteúdo brasileiro junto das outras cozinhas ajuda a ampliar as ideias para cozinhar em casa." },
-              { name: "Isabela Ferreira", seed: "IsabelaFerreira", time: "Coleção completa", message: "O que mais me chama a atenção é poder passear por cozinhas de vários países e consultar tudo digitalmente. São muitas possibilidades para descobrir novos pratos." },
+              { name: "Mariana Costa", avatar: "/testimonials/mariana-costa.jpg", time: "Culinária italiana", message: "Sempre gostei de massas, mas queria conhecer melhor os pratos de diferentes regiões da Itália. O volume italiano reúne ideias que vão além das receitas mais conhecidas e me inspira a variar o cardápio." },
+              { name: "Rafael Mendes", avatar: "/testimonials/rafael-mendes.jpg", time: "Cozinha francesa", message: "A parte da culinária francesa é ótima para quem quer explorar novos sabores e técnicas. Gostei da variedade de preparos e de poder consultar as receitas no PDF." },
+              { name: "Camila Oliveira", avatar: "/testimonials/camila-oliveira.jpg", time: "Sabores do Japão", message: "Tenho curiosidade pela cozinha japonesa e achei interessante ter várias receitas reunidas em um só lugar. É um material para explorar aos poucos e escolher o que preparar." },
+              { name: "Bruno Almeida", avatar: "/testimonials/bruno-almeida.jpg", time: "Culinárias brasileiras", message: "Gostei da proposta de conhecer diferentes tradições culinárias. O conteúdo brasileiro junto das outras cozinhas ajuda a ampliar as ideias para cozinhar em casa." },
+              { name: "Isabela Ferreira", avatar: "/testimonials/isabela-ferreira.jpg", time: "Coleção completa", message: "O que mais me chama a atenção é poder passear por cozinhas de vários países e consultar tudo digitalmente. São muitas possibilidades para descobrir novos pratos." },
             ].map((item) => (
               <article key={item.name} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
                 <div className="flex items-center gap-3">
-                  <img src={`https://api.dicebear.com/9.x/personas/svg?seed=${item.seed}&backgroundColor=f3e8d0`} alt={`Avatar ilustrado de ${item.name}`} className="h-12 w-12 rounded-full border border-slate-200 bg-amber-50" loading="lazy" />
+                  <img src={item.avatar} alt={`Avatar ilustrado de ${item.name}`} className="h-12 w-12 rounded-full border border-slate-200 bg-amber-50" loading="lazy" />
                   <div className="min-w-0">
                     <p className="font-semibold text-slate-900">{item.name}</p>
                     <p className="text-xs text-slate-500">{item.time}</p>

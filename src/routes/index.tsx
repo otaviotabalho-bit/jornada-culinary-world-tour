@@ -254,7 +254,7 @@ function Index() {
             ].map((item) => (
               <article key={item.name} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
                 <div className="flex items-center gap-3">
-                  <img src={item.avatar} alt={`Avatar ilustrado de ${item.name}`} className="h-12 w-12 rounded-full border border-slate-200 bg-amber-50" loading="lazy" />
+                  <img src={item.avatar} alt={`Avatar ilustrado de ${item.name}`} className="h-12 w-12 shrink-0 rounded-full border border-slate-200 bg-amber-50 object-cover object-center" loading="lazy" />
                   <div className="min-w-0">
                     <p className="font-semibold text-slate-900">{item.name}</p>
                     <p className="text-xs text-slate-500">{item.time}</p>

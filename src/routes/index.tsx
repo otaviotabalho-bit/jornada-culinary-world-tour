@@ -268,10 +268,7 @@ function Index() {
         </div>
       </section>
 
-      <footer className={`${container} flex items-center justify-between py-10`}>
-        <Logo />
-        <p className="text-right text-xs text-muted-foreground">Uma coleção de sabores<br />e tradições culinárias.</p>
-      </footer>
+
     </div>
   );
 }
